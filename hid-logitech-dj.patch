@@ -1,0 +1,29 @@
+--- hid-logitech-dj.c
++++ hid-logitech-dj.c
+@@ -1692,11 +1692,12 @@
+ 		}
+ 		/*
+ 		 * Mouse-only receivers send unnumbered mouse data. The 27 MHz
+-		 * receiver uses 6 byte packets, the nano receiver 8 bytes.
++		 * receiver uses 6 byte packets, the nano receiver 8 bytes and
++		 * some gaming ones are using 16 bytes.
+ 		 */
+ 		if (djrcv_dev->unnumbered_application == HID_GD_MOUSE &&
+-		    size <= 8) {
+-			u8 mouse_report[9];
++		   size <= 16) {
++			u8 mouse_report[17];
+ 
+ 			/* Prepend report id */
+ 			mouse_report[0] = REPORT_TYPE_MOUSE;
+@@ -1980,6 +1981,10 @@
+ 	  HID_USB_DEVICE(USB_VENDOR_ID_LOGITECH,
+ 		USB_DEVICE_ID_LOGITECH_NANO_RECEIVER_LIGHTSPEED_1_1),
+ 	 .driver_data = recvr_type_gaming_hidpp},
++	{ /* Logitech lightspeed receiver (0xc547) */
++	 HID_USB_DEVICE(USB_VENDOR_ID_LOGITECH,
++		0xc547),
++	.driver_data = recvr_type_gaming_hidpp},
+ 
+ 	{ /* Logitech 27 MHz HID++ 1.0 receiver (0xc513) */
+ 	  HID_USB_DEVICE(USB_VENDOR_ID_LOGITECH, USB_DEVICE_ID_MX3000_RECEIVER),

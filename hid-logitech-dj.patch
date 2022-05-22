@@ -22,7 +22,7 @@
  	 .driver_data = recvr_type_gaming_hidpp},
 +	{ /* Logitech lightspeed receiver (0xc547) */
 +	 HID_USB_DEVICE(USB_VENDOR_ID_LOGITECH,
-+		0xc547),
++		0xc547 /* hid-logitech-dj-dkms: Hard-coded so we don't need to modify the header */),
 +	.driver_data = recvr_type_gaming_hidpp},
  
  	{ /* Logitech 27 MHz HID++ 1.0 receiver (0xc513) */

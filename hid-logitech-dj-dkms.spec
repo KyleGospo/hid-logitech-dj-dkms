@@ -8,6 +8,7 @@ Release:    1%{?dist}
 Summary:    Logitech input driver patched with support for Lightspeed 1.2 connectivity. IE: G Pro X Superlight or the G PowerPlay Wireless Charging System.
 License:    GPLv2+
 URL:        https://github.com/KyleGospo/hid-logitech-dj-dkms/
+BuildArch:  noarch
 
 # Source file:
 # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/drivers/hid/hid-logitech-dj.c

@@ -50,3 +50,8 @@ dkms remove -m %{dkms_name} -v %{version} -q --all || :
 
 %files
 %{_usrsrc}/%{dkms_name}-%{version}
+
+# Finally, changes from the latest release of your application are generated from
+# your project's Git history. It will be empty until you make first annotated Git tag.
+%changelog
+{{{ git_dir_changelog }}}

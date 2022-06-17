@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 %global dkms_name hid-logitech-dj
-%global kernel_version 5.17
+%global kernel_version 5.18
 
 Name:       %{dkms_name}-dkms
 Version:    %{kernel_version}.{{{ git_dir_version }}}
